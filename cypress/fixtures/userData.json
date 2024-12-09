@@ -5,6 +5,6 @@
   }, 
   "userIncorrect": {
       "userName":"test",
-      "password": "test"
+      "password":"test"
   }
 }
