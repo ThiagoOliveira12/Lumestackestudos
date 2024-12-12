@@ -11,6 +11,8 @@ describe('Orange HRM test', () => {
     firstNameField: "[name='firstName']",
     lastNameField: "[name='lastName']",
     genericIdField: '.oxd-input--active',
+    nationalityButton: ':nth-child(5) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text',
+
   }
 
   it.only('User Info Update - Success', () => {
@@ -24,6 +26,8 @@ describe('Orange HRM test', () => {
     cy.get(selectorsList.firstNameField).clear().type('FirstNameTest')
     cy.get(selectorsList.lastNameField).clear().type('LastNameTest')
     cy.get(selectorsList.genericIdField).eq(4).clear().type('EmployeeTT')
+    cy.get(selectorsList.nationalityButton).click()
+    cy.get(':nth-child(9) > span').click()
   }),
 
   it('Login - Fail', () => {
