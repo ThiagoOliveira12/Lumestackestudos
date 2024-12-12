@@ -11,7 +11,6 @@ describe('Orange HRM test', () => {
     firstNameField: "[name='firstName']",
     lastNameField: "[name='lastName']",
     genericIdField: '.oxd-input--active',
-
   }
 
   it.only('User Info Update - Success', () => {
