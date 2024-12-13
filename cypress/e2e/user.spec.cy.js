@@ -11,7 +11,9 @@ describe('Orange HRM test', () => {
     firstNameField: "[name='firstName']",
     lastNameField: "[name='lastName']",
     genericIdField: '.oxd-input--active',
-    nationalityButton: ':nth-child(5) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text',
+    dorpDownBoxButton: '.oxd-select-text--arrow',
+    fisrtItemComboBox: ':nth-child(12) > span',
+    secondItemComboBox: '.oxd-select-dropdown > :nth-child(2)'
 
   }
 
@@ -26,8 +28,10 @@ describe('Orange HRM test', () => {
     cy.get(selectorsList.firstNameField).clear().type('FirstNameTest')
     cy.get(selectorsList.lastNameField).clear().type('LastNameTest')
     cy.get(selectorsList.genericIdField).eq(4).clear().type('EmployeeTT')
-    cy.get(selectorsList.nationalityButton).click()
-    cy.get(':nth-child(9) > span').click()
+    cy.get(selectorsList.dorpDownBoxButton).eq(0).click()
+    cy.get(selectorsList.fisrtItemComboBox).click()
+    cy.get(selectorsList.dorpDownBoxButton).eq(1).click()
+    cy.get(selectorsList.secondItemComboBox).click()
   }),
 
   it('Login - Fail', () => {
